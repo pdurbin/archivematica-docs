@@ -367,7 +367,11 @@ edit a configuration file from the command line.
 
 8. Restore DEBUG to False and restart Apache to turn error reporting off again
 
+<<<<<<< HEAD
 .. _browser-compatibility:
+=======
+.. _browser compatibility:
+>>>>>>> 1.7
 
 Browser compatability
 ^^^^^^^^^^^^^^^^^^^^^

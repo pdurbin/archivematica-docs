@@ -37,6 +37,13 @@ dashboard, allows you to configure application components and manage users.
 
 * :ref:`Users <dashboard-users>`
 
+* :ref:`Handle server config <handle-server>`
+
+* :ref:`Language <language-choice>`
+
+* :ref:`Version <version>`
+
+
 .. _dashboard-processing:
 
 Processing configuration
@@ -52,6 +59,11 @@ to configure the job decision points presented by Archivematica during transfer 
 ingest. This screen provides you with an easy form to configure the default
 processingMCP.xml that governs these decisions. When you change the options using
 the web interface the necessary XML will be written behind the scenes.
+
+Starting in 1.7, Archivematica includes both a default and an automated
+processing configuration. The automated processing configuration is used only if
+a transfer source location has been set up to move content through Archivematica
+with no human operator.
 
 Multiple processing configurations can be created using the *Add* button on the
 Processing Configuration screen. Often, users create multiple configurations for
@@ -101,6 +113,11 @@ about how they work.
    after extraction. Note that this field will not be invoked unless the *Extract packages*
    field is set to "Yes".
 
+#. **Perform policy checks on originals**: Select "Yes" if you plan to create
+   policies using MediaConch or future validation tools as commands in the
+   Format Policy Registry. You must also create rules based on the formats you
+   want to check.
+
 #. **Examine contents**: Select whether or not to run Bulk Extractor to generate
    content reports to identify personally identifying information (PII).
 
@@ -113,6 +130,16 @@ about how they work.
 #. **Normalize**: Select Normalization options (see :ref:`Normalize <normalize>`).
 
 #. **Approve normalization**: Select whether or not to automatically approve normalization.
+
+#. **Perform policy checks on preservation derivatives**: Select "Yes" if you plan to create
+   policies using MediaConch or future validation tools as commands in the
+   Format Policy Registry. You must also create rules based on the formats you
+   want to check.
+
+#. **Perform policy checks on access derivatives**: Select "Yes" if you plan to create
+    policies using MediaConch or future validation tools as commands in the
+    Format Policy Registry. You must also create rules based on the formats you
+    want to check.
 
 #. **Reminder: add metadata if desired**: Select whether or not Archivematica should
    remind the user to add metadata to the SIP using the GUI. Note: this job
@@ -136,11 +163,20 @@ about how they work.
 
 #. **Store AIP**: Store the AIP without interrupting the workflow in the dashboard.
 
-#. **Store AIP location**: Select one archival storage location where you will
-   consistently send your AIPs.
+#. **Store AIP location**: Select a location to send your AIPs. There are two
+   standard locations: Default and Standard Archivematica Directory.  Default location
+   is usually used for the automated workflow. If you choose Default and you have
+   set up only one location your AIPs will be stored in that one location.
+
+#. **Upload DIP**: Select an access system to send your DIPs or don't upload the DIP.
+
+#. **Store DIP**: Choose to store or not store a DIP.
 
 #. **Store DIP location**: Select one archival storage location where you will
-   consistently send your DIPs, if you wish to store them.
+   consistently send your DIPs. There are two standard locations: Default and
+   Standard Archivematica Directory.  Default location is usually used for the
+   automated workflow. If you choose Default and you have set up only one location
+   your AIPs will be stored in that one location.
 
 .. _dashboard-general:
 
@@ -465,6 +501,27 @@ Archivematica using a username/password combination. Should you need to change
 a user's username or password, you can do so by clicking the "Edit" button,
 corresponding to the user, on the administration page. Should you need to
 revoke a user's access, you can click the corresponding "Delete" button.
+
+
+.. _handle-server:
+
+Handle server config
+--------------------
+Archivematica can to be configured to make requests to a Handle System HTTP API
+so that files, directories and entire AIPs can be assigned persistent identifiers
+(PIDS) and derived persistent URLs (PURLs).
+
+.. _language-choice:
+
+Language
+--------
+The Archivematica dashboard is in the process of being translated. For more information go to `Translations <https://www.archivematica.org/en/docs/archivematica-1.7/user-manual/translations/translations/>`_.
+
+.. _version:
+
+Version
+-------
+This tab is where you can discover the version of Archivematica you're using.
 
 
 :ref:`Back to the top <dashboard-admin>`
