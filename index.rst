@@ -148,7 +148,7 @@ SIP into an AIP or a DIP. This tab also contains the backlog widget.
 * :ref:`Add PREMIS rights <add-rights>`
 * :ref:`Normalize <normalize>`
 * :ref:`Store the AIP <store-aip>`
-* :ref:`Reingest AIP <reingest>`
+* :ref:`Re-ingest AIP <reingest>`
 * :ref:`Upload DIP to ArchivesSpace <upload-AS>`
 * :ref:`Manual normalization <manual-norm>`
 
